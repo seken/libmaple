@@ -34,7 +34,6 @@ MS561101BA::MS561101BA() {
 
 void MS561101BA::init(uint8_t address) {  
   _addr =  address;
-  i2c_master_enable(I2C1, 0);
   
   reset(); // reset the device to populate its internal PROM registers
   delay(1000); // some safety time 
