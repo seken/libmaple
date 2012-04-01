@@ -85,6 +85,8 @@ LIBMAPLE_MODULES += $(SRCROOT)/libraries/FreeRTOS
 # Added Libraries:
 LIBMAPLE_MODULES += $(SRCROOT)/libraries/MS561101BA
 LIBMAPLE_MODULES += $(SRCROOT)/libraries/HMC58X3
+LIBMAPLE_MODULES += $(SRCROOT)/libraries/I2Cdev
+LIBMAPLE_MODULES += $(SRCROOT)/libraries/MPU6050
 
 
 # Call each module's rules.mk:
