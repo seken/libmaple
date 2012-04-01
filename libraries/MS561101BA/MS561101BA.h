@@ -21,28 +21,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-
-
 #ifndef MS561101BA_h
 #define MS561101BA_h
 
 #include <libmaple_types.h>
-
-// TODO replace with libmaple standard :(
-typedef uint8 uint8_t;
-typedef uint16 uint16_t;
-typedef uint32 uint32_t;
-typedef uint64 uint64_t;
-typedef int8 int8_t;
-typedef int16 int16_t;
-typedef int32 int32_t;
-typedef int64 int64_t;
-
+#include <stdint.h>
 #include <Wire.h>
-
-//#define DEBUG_V
-//#define DEBUG
-//#include <DebugUtils.h>
 
 // addresses of the device
 #define MS561101BA_ADDR_CSB_HIGH  0x76   //CBR=1 0x76 I2C address when CSB is connected to HIGH (VCC)
@@ -67,8 +51,6 @@ typedef int64 int64_t;
 // C1 will be at 0xA2 and all the subsequent are multiples of 2
 #define MS561101BA_PROM_REG_COUNT 6 // number of registers in the PROM
 #define MS561101BA_PROM_REG_SIZE 2 // size in bytes of a prom registry.
-
-
 
 class MS561101BA {
   public:
