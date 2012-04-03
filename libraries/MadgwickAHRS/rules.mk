@@ -8,9 +8,9 @@ BUILDDIRS += $(BUILD_PATH)/$(d)
 CFLAGS_$(d) := $(WIRISH_INCLUDES) $(LIBMAPLE_INCLUDES)
 
 # Local rules and targets
-cSRCS_$(d) :=
+cSRCS_$(d) := MadgwickAHRS.c
 
-cppSRCS_$(d) := MadgwickAHRS.cpp
+cppSRCS_$(d) := 
 
 cFILES_$(d) := $(cSRCS_$(d):%=$(d)/%)
 cppFILES_$(d) := $(cppSRCS_$(d):%=$(d)/%)
