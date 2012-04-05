@@ -8,9 +8,9 @@ BUILDDIRS += $(BUILD_PATH)/$(d)
 CFLAGS_$(d) := $(WIRISH_INCLUDES) $(LIBMAPLE_INCLUDES)
 
 # Local rules and targets
-cSRCS_$(d) :=
+cSRCS_$(d) := MahonyAHRS.c
 
-cppSRCS_$(d) := MahonyAHRS.cpp
+cppSRCS_$(d) := 
 
 cFILES_$(d) := $(cSRCS_$(d):%=$(d)/%)
 cppFILES_$(d) := $(cppSRCS_$(d):%=$(d)/%)

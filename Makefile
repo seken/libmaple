@@ -87,8 +87,8 @@ LIBMAPLE_MODULES += $(SRCROOT)/libraries/MS561101BA
 LIBMAPLE_MODULES += $(SRCROOT)/libraries/HMC58X3
 LIBMAPLE_MODULES += $(SRCROOT)/libraries/I2Cdev
 LIBMAPLE_MODULES += $(SRCROOT)/libraries/MPU6050
-#LIBMAPLE_MODULES += $(SRCROOT)/libraries/MahonyAHRS
-LIBMAPLE_MODULES += $(SRCROOT)/libraries/MadgwickAHRS
+LIBMAPLE_MODULES += $(SRCROOT)/libraries/MahonyAHRS
+#LIBMAPLE_MODULES += $(SRCROOT)/libraries/MadgwickAHRS
 
 
 # Call each module's rules.mk:

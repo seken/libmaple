@@ -20,13 +20,14 @@
 //---------------------------------------------------------------------------------------------------
 // Definitions
 
-#define sampleFreq	512.0f			// sample frequency in Hz
+//#define sampleFreq	512.0f			// sample frequency in Hz
 #define twoKpDef	(2.0f * 0.5f)	// 2 * proportional gain
 #define twoKiDef	(2.0f * 0.0f)	// 2 * integral gain
 
 //---------------------------------------------------------------------------------------------------
 // Variable definitions
 
+volatile float sampleFreq = 512;
 volatile float twoKp = twoKpDef;											// 2 * proportional gain (Kp)
 volatile float twoKi = twoKiDef;											// 2 * integral gain (Ki)
 volatile float q0 = 1.0f, q1 = 0.0f, q2 = 0.0f, q3 = 0.0f;					// quaternion of sensor frame relative to auxiliary frame
