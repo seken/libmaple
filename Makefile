@@ -49,7 +49,7 @@ GLOBAL_FLAGS    := -D$(VECT_BASE_ADDR)					     \
 GLOBAL_CFLAGS   := -Os -g3 -gdwarf-2  -mcpu=cortex-m3 -mthumb -march=armv7-m \
 		   -nostdlib -ffunction-sections -fdata-sections	     \
 		   -Wl,--gc-sections $(GLOBAL_FLAGS)
-GLOBAL_CXXFLAGS := -fno-rtti -fno-exceptions -Wall $(GLOBAL_FLAGS)
+GLOBAL_CXXFLAGS := -fno-rtti -fno-exceptions -Wall $(GLOBAL_FLAGS) -std=c++0x
 GLOBAL_ASFLAGS  := -mcpu=cortex-m3 -march=armv7-m -mthumb		     \
 		   -x assembler-with-cpp $(GLOBAL_FLAGS)
 LDFLAGS  = -T$(LDDIR)/$(LDSCRIPT) -L$(LDDIR)    \
@@ -88,6 +88,7 @@ LIBMAPLE_MODULES += $(SRCROOT)/libraries/HMC58X3
 LIBMAPLE_MODULES += $(SRCROOT)/libraries/I2Cdev
 LIBMAPLE_MODULES += $(SRCROOT)/libraries/MPU6050
 LIBMAPLE_MODULES += $(SRCROOT)/libraries/MahonyAHRS
+LIBMAPLE_MODULES += $(SRCROOT)/libraries/Craft
 #LIBMAPLE_MODULES += $(SRCROOT)/libraries/MadgwickAHRS
 
 

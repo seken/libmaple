@@ -1,0 +1,17 @@
+#pragma once
+
+enum Mode {
+	STOPPED = 0,
+	STOPPED_READY = 1,
+	STOPPED_STARTUP = 2,
+	LAUNCH = 3,
+	NORMAL = 4,
+	HOLD = 5,
+	ACRO = 6,
+	WAYPOINT = 7,
+	RETURN_HOME = 8,
+	LOW_BATTERY = 9,
+	STOP = 10,
+	REPLAY = 11,
+	FAULT = 12,
+};
