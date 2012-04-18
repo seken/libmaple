@@ -16,6 +16,8 @@ class Attitude {
 		float getGroundHeight();
 
 		void cal_GyroOffsets();
+		void cal_GyroUserOffsets();
+		void cal_AccelOffsets();
 	
 		float yaw;
 		float pitch;

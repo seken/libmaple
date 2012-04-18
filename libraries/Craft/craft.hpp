@@ -23,6 +23,8 @@ class Craft {
 		const Mode getMode() const;
 
 		void cal_GyroOffsets();
+		void cal_GyroUserOffsets();
+		void cal_AccelOffsets();
 
 	protected:
 		void blink_slow() const;

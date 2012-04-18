@@ -99,6 +99,65 @@ float Attitude::getGroundHeight() {
 	return -(pressure-m_initialPressure) * 9.144;
 }
 
+void Attitude::cal_AccelOffsets() {
+}
+
+void Attitude::cal_GyroUserOffsets() {
+	int64_t tx = 0;
+	int64_t ty = 0;
+	int64_t tz = 0;
+	
+	for(int i = 0; i < 5000; ++i) {
+		int16_t ax, ay, az, gx, gy, gz;
+		m_ags.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+
+		tx += gx;
+		ty += gy;
+		tz += gz;
+	}
+
+	tx/=5000;
+	ty/=5000;
+	tz/=5000;
+
+	SerialUSB.print("tx: ");
+	SerialUSB.println(tx);
+	SerialUSB.print("ty: ");
+	SerialUSB.println(ty);
+	SerialUSB.print("tz: ");
+	SerialUSB.println(tz);
+
+	SerialUSB.print("offx: ");
+	SerialUSB.println(m_config->cal.dev_gyro_offset.x);
+	SerialUSB.print("offy: ");
+	SerialUSB.println(m_config->cal.dev_gyro_offset.y);
+	SerialUSB.print("offz: ");
+	SerialUSB.println(m_config->cal.dev_gyro_offset.z);
+
+	if (tx > 0) {
+		--m_config->cal.dev_gyro_offset.x;
+	} else if (tx < 0) {
+		++m_config->cal.dev_gyro_offset.x;
+	}
+
+	if (ty > 0) {
+		--m_config->cal.dev_gyro_offset.y;
+	} else if (ty < 0) {
+		++m_config->cal.dev_gyro_offset.y;
+	}
+
+	if (tz > 0) {
+		--m_config->cal.dev_gyro_offset.z;
+	} else if (tz < 0) {
+		++m_config->cal.dev_gyro_offset.z;
+	}
+
+	// Apply precalculated gyro offsets
+	m_ags.setXGyroOffsetUser(m_config->cal.dev_gyro_offset.x);
+	m_ags.setYGyroOffsetUser(m_config->cal.dev_gyro_offset.y);
+	m_ags.setZGyroOffsetUser(m_config->cal.dev_gyro_offset.z);
+}
+
 void Attitude::cal_GyroOffsets() {
 	int64_t tx = 0;
 	int64_t ty = 0;

@@ -188,6 +188,14 @@ void Craft::cal_GyroOffsets() {
 	m_attitude.cal_GyroOffsets();
 }
 
+void Craft::cal_GyroUserOffsets() {
+	m_attitude.cal_GyroUserOffsets();
+}
+
+void Craft::cal_AccelOffsets() {
+	m_attitude.cal_AccelOffsets();
+}
+
 const Mode Craft::getMode() const {
 	return m_current;
 }
