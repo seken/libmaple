@@ -14,6 +14,7 @@ cppSRCS_$(d) := \
 	craft_attitude.cpp \
 	craft_control.cpp \
 	craft_motors.cpp \
+	craft_spektrum.cpp \
 	craft.cpp
 
 cFILES_$(d) := $(cSRCS_$(d):%=$(d)/%)
